@@ -181,3 +181,11 @@ Pruebas de Datos Válidos/Inválidos: Puedes ampliar los casos de prueba incluye
 Interfaz de Usuario: Verificar que los mensajes de éxito o error se muestren correctamente.
 
 Pruebas de Seguridad: Asegúrate de que los usuarios sin permisos no puedan acceder a las funciones restringidas.
+
+
+
+## Video del Proyecto
+
+Aquí tienes un video que explica el proyecto:
+
+https://drive.google.com/file/d/1CoyDTokvgYuHq3yJtetnHvnTxRWjqdVQ/view?usp=sharing
