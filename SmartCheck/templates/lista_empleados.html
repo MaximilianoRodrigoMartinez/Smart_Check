@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h2>Lista de empleados</h2>
+<ul>
+    {% for empleado in empleados %}
+        <li>
+            {% if empleado.foto %}  
+                <img src="{{ empleado.foto.url }}" alt="Foto de {{ empleado.nombre }}" style="width: 50px; height: 50px;"/>
+            {% else %}
+                <img src="{% static 'app_check\static\images' %}" alt="Foto no disponible" style="width: 50px; height: 50px;"/>  
+            {% endif %}
+            {{ empleado.nombre }} {{ empleado.apellido }} - {{ empleado.puesto }} - {{ empleado.local }}
+        </li>
+    {% empty %}
+        <li>No hay empleados registrados.</li>
+    {% endfor %}
+</ul>
+
+{% endblock contenido %}

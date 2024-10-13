@@ -1,0 +1,26 @@
+{% extends 'padre.html' %}
+
+{% block contenido %}
+
+<h2>Lista de Locales</h2>
+
+Estos son nuestros locales:
+
+<ul>
+    {% for local in lista_locales %}
+        <li>
+            <strong>{{ local.nombre }}</strong>
+            <ul>
+                {% for empleado in local.empleado_set.all %}
+                    <li>{{ empleado.nombre }}</li> 
+                {% empty %}
+                    <li>No hay empleados asignados.</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% empty %}
+        <li>No hay locales disponibles.</li>
+    {% endfor %}
+</ul>
+
+{% endblock contenido %}

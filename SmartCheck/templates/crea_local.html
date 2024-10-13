@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block contenido %}
+
+<h2>Registra un nuevo local</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Muestra el formulario -->
+    <button type="submit">Crear Local</button>
+</form>
+<a href="{% url 'Lista_locales' %}">Volver a la lista de locales</a>
+
+{% endblock contenido %}

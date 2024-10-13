@@ -1,0 +1,22 @@
+{% extends 'padre.html' %}
+
+{% block contenido %}
+
+<h2>Registra empleado</h2>
+
+<form method="POST" enctype="multipart/form-data">  
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    {{ form.nombre }}
+    <label for="apellido">Apellido:</label>
+    {{ form.apellido }}
+    <label for="puesto">Puesto:</label>
+    {{ form.puesto }}
+    <label for="local">Local:</label>
+    {{ form.local }}
+    <label for="foto">Foto:</label>  
+    {{ form.foto }}
+    <button type="submit">Crear Empleado</button>
+</form>
+
+{% endblock contenido %}

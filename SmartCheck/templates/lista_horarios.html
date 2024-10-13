@@ -1,0 +1,20 @@
+{% extends 'padre.html' %}
+
+{% block contenido %}
+
+    <h2>Lista de Horarios</h2>
+    <ul>
+        {% for horario in lista_horarios %}
+            <li>
+                <strong>Empleado:</strong> {{ horario.empleado }}<br>
+                <strong>Fecha:</strong> {{ horario.fecha }}<br>
+                <strong>Hora Inicio:</strong> {{ horario.hora_inicio|time:"H:i A" }}<br>
+                <strong>Hora Fin:</strong> {{ horario.hora_fin|time:"H:i A" }}
+            </li>
+        {% empty %}
+            <li>No hay horarios asignados.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'Asigna_horarios' %}">Asignar Horarios</a>
+
+{% endblock contenido %}

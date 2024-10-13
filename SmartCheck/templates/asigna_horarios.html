@@ -1,0 +1,38 @@
+{% extends 'padre.html' %}
+
+{% block contenido %}
+
+<h2>Asigna o modifica horarios</h2>
+
+<form method="POST" action="{% url 'Asigna_horarios' %}">
+
+    {% csrf_token %}
+    
+    <label for="local_id">Selecciona un local:</label>
+    <select name="local_id" id="local_id">
+        {% for local in lista_locales %}
+            <option value="{{ local.id }}">{{ local.nombre }}</option>
+        {% endfor %}
+    </select>
+
+    <div>
+        <label for="empleado">Empleado:</label>
+        {{ form.empleado }}  
+    </div>
+    <div>
+        <label for="hora_inicio">Hora de Inicio:</label>
+        {{ form.hora_inicio }}
+    </div>
+    <div>
+        <label for="hora_fin">Hora de Fin:</label>
+        {{ form.hora_fin }}
+    </div>
+    <div>
+        <label for="fecha">Fecha:</label>
+        {{ form.fecha }}
+    </div>
+
+    <button type="submit">Asignar Horario</button>
+</form>
+
+{% endblock contenido %}
